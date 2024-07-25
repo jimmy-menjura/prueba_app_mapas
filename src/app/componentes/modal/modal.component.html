@@ -1,0 +1,28 @@
+@if(accion){
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Dirección origen</mat-label>
+    <input matInput [(ngModel)]="origen" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Dirección destino</mat-label>
+    <input matInput [(ngModel)]="destino" />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="cancelar()">Salir</button>
+  <button mat-button (click)="aceptar()" cdkFocusInitial>Aceptar</button>
+</mat-dialog-actions>
+}
+@else{
+  <mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Url</mat-label>
+      <input matInput [(ngModel)]="url" />
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="cancelar()">Salir</button>
+    <button mat-button (click)="copiar()" cdkFocusInitial>Copiar URL</button>
+  </mat-dialog-actions>
+}
